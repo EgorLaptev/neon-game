@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	
+	<?php require_once 'server.php' ?>
+
+	<!-- Settings -->
+	<div id="settings" class="hidden">
+		<span class="close">&times;</span>
+		<a id="game_setting">Game settings</a>
+		<label>
+			Show score
+			<input type="checkbox" id="showScore" checked><div></div>
+		</label>
+		<label>
+			Show func
+			<input type="checkbox" id="showFunc"><div></div>
+		</label>
+		<label class="volume">
+			Volume
+			<input type="checkbox" id="volumeValue" checked><div></div>
+		</label>
+		
+		<a id="colors">Colors</a>
+		<a id="reset_game">New game</a>
+		<a id="about_me">About me</a></div>
+	<!-- Colors settings -->
+	<div id="colors_settings" class="hidden">
+		<span class="close">&times;</span>
+
+		<div>
+			<h2 class="title">Circle</h2>
+			
+			<ul id="colors_circle_list">
+				<li class="night-blue" data-color="#381DA6">Night blue</li>
+				<li class="red-dragon" data-color="#DC143C">Red dragon</li>
+				<li class="golden-flower" data-color="#FFDD00">Golden flower</li>
+				<li class="toxic-green" data-color="#15FF00">Toxic green</li>
+			</ul>
+		</div>
+		<div>
+			<h2 class="title">Background</h2>
+			
+			<ul id="colors_bg_list">
+				<li data-color="#050505">Black mattery</li>
+				<li data-color="#EEE">Snow polygon</li>
+			</ul>
+		</div></div>
+	<!-- About me -->
+	<div id="about_me_block" class="hidden">
+		<span class="close">&times;</span>
+
+		Laptev Egor, 14 <br/>
+		2019</div>
+	<!-- Game settings -->
+	<div id="game_settings"  class="hidden">
+		<span class="close">&times;</span>
+
+		<input type="password" id="game_password" placeholder="PIN">
+
+		<div id="game_settings_menu" class="hidden">
+
+			<h3>Что-бы изменения подействовали <br><span id="text_reload">перезагрузите игру!</span></h3>
+
+			<div class="settings-block">
+				<label>
+					<div class="settname">Start circle radius</div>
+					<input type="number" min="1" max="100" value="25" id="startCircleRadius" data-defaultValue="25" data-localName="standartCircleRadius">
+					<button class="reset_game_setting">&times;</button>
+				</label>
+				<label>
+					<div class="settname">Start point radius</div>
+					<input type="number" min="1" max="100" value="15" id="startPointRadius" data-defaultValue="20" data-localName="standartPointRadius">
+					<button class="reset_game_setting">&times;</button>
+				</label>
+				<label>
+					<div class="settname">Score from one point</div>
+					<input type="number" min="0" max="100" value="1" id="scoreForOnePoint" data-defaultValue="1" data-localName="scoreFromOnePoint">
+					<button class="reset_game_setting">&times;</button>
+				</label>
+			</div>
+
+			<button id="reset_game_settings">Reset settings</button>
+
+		</div></div>
+
+	<!-- Market -->
+	<div id="market" class="hidden">
+		<div class="goods">
+			<div class="good" id="upSize">
+				<span class="good__level" data-max_level="35">1</span>
+				<span class="good__price">10</span>
+				<span class="good__title">size</span>
+				<article class="good__description">Raises your size by 1 unit</article>
+				
+			</div>
+			<div class="good active" id="upPointPrice">
+				<span class="good__level" data-max_level="5">1</span>
+				<span class="good__price">1</span>
+				<span class="good__title">point price</span>
+				<article class="good__description">raises Point's Price by 1 init</article>
+				
+			</div>
+			<div class="good" id="upPointsOnMap">
+				<span class="good__level" data-max_level="3">1</span>
+				<span class="good__price">100</span>
+				<span class="good__title">point value</span>
+				<article class="good__description">Added 1 new point on map</article>
+			</div>
+		</div></div>
+	
+	<!-- Indecators -->
+	<span id="show_func" class="hidden">Func: 0; Speed: 0;</span>
+	<span id="show_score">SCORE: 0</span>
+
+	<canvas id="canv"></canvas>
+
+	<!-- -- -- -- scripts -- -- -- -->
+	<script src="script.js"></script>
+	<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</body>
+</html>

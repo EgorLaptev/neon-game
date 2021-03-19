@@ -1,0 +1,348 @@
+* {
+	box-sizing: border-box;
+	user-select: none;
+}
+
+body {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	font-family: monospace;
+	color: white;
+}
+
+canvas {
+	background-color: #050505;
+	display: block;
+	cursor: none;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+input:focus::placeholder {
+	opacity: 0;
+}
+
+/* Indecators */
+#show_func {
+	background-color: transparent;
+	position: fixed;
+	left: 5px;
+	top: 5px;
+	user-select: none;
+	color: lime;
+}
+
+#show_score {
+	position: fixed;
+	top: 5px;
+	right: 15px;
+	font-size: 25px;
+	color: #381DA6;
+	text-shadow: 0 0 5px #381DA6;
+	user-select: none;
+}
+
+/* Settings menus */
+#settings,
+#colors_settings,
+#about_me_block,
+#game_settings,
+#game_settings_menu,
+#market {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background-color: rgba(0,0,0,.9);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+#settings label,
+#settings a,
+#colors_settings label,
+#game_settings_menu label {
+	margin-top: 25px;
+	font-size: 18px;
+	cursor: pointer;
+	user-select: none;
+	text-transform: uppercase;
+}
+
+/* Colors setting */
+#colors_settings {
+	flex-direction: row;
+	text-align: center;
+}
+
+#colors_settings div {
+	margin: 0 20px;
+}
+
+#colors_settings ul {
+	border-radius: 25px;
+	border: 2px solid white;
+	width: 200px;
+	height: 200px;
+}
+
+#colors_settings li {
+	cursor: pointer;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+}
+
+
+#colors_bg_list li {
+	height: 100px;
+	line-height: 100px;
+}
+
+#colors_settings li:not(:last-child) {
+	border-bottom: 1px solid #111
+}
+
+/* Colors onhover*/
+.night-blue:hover {
+	color: #381DA6;
+}
+.red-dragon:hover {
+	color: #DC143C;
+}
+.golden-flower:hover {
+	color: #FFDD00;
+}
+.toxic-green:hover {
+	color: #15FF00;
+}
+
+/* About me */
+#about_me {
+	margin-top: 50px !important;
+}
+
+#settings input[type="checkbox"] {
+	display: none;
+}
+
+#settings input[type="checkbox"]:checked ~ div {
+	border-top: 1px solid white;
+}
+
+.title {
+	color: #381DA6;
+}
+
+#about_me_block {
+	font-size: 20px;
+	text-align: center;
+	line-height: 40px;
+}
+
+/* Password on game settings*/
+#game_password::placeholder {
+	text-align: center;
+	color: white;
+	transition: .5s;
+}
+
+#game_password {
+	height: 50px;
+	width: 250px;
+	font-size: 25px;
+	padding: 0 10px;
+	background-color: transparent;
+	border: 2px solid white;
+	color: white;
+	outline: none;
+}
+
+/* Game settings */
+
+#game_settings_menu label {
+	margin-top: 25px;
+	width: 100%;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.reset_game_setting {
+	background-color: transparent;
+	border: 2px solid #aa0000;
+	border-radius:  0 25px 25px 0;
+	color: #aa0000;
+	width: 35px;
+	height: 30px;
+	font-size: 25px;
+	outline: none;
+	cursor: pointer;
+}
+
+.settings-block {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 325px;
+}
+
+#reset_game_settings {
+	background-color: transparent;
+	border: 3px solid #aa0000;
+	border-radius: 25px;
+	color: #aa0000;
+	height: 40px;
+	width: 200px;
+	font-size: 20px;
+	cursor: pointer;
+	margin-top: 30px;
+	outline: none;
+}
+
+.settname {
+	width: 215px;
+}
+
+#game_settings_menu h3 {
+	text-align: center;
+	color: #aa0000;
+	font-weight: bolder;
+	font-size: 19px;
+}
+
+#text_reload {
+	cursor: pointer;
+}
+
+#game_settings_menu input[type="number"] {
+	background-color: transparent;
+	border: none;
+	color: white;
+	border-left: 2px solid white;
+	padding-left: 10px;
+	font-size: 20px;
+	outline: none;
+	width: 60px;
+	cursor: default;
+}
+
+/* Market */
+#market {
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+/* Filter */
+.filters {
+	width: 225px;
+	height: 450px;
+	border-radius: 10px;
+	border: 2px solid white;
+	transition: 1s;
+	overflow: hidden;
+}
+
+#search {
+	width: 100%;
+	height: 40px;
+}
+
+/* Goods */
+.goods {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	padding: 50px 0;
+	flex-wrap: wrap;
+}
+
+.good {
+	width: 200px;
+	height: 200px;
+	border-radius: 15px;
+	border: 3px solid white;
+	margin: 20px;
+	transition: 1s;
+	position: relative;
+	cursor: pointer;
+	color: white;
+}
+
+.good__level {
+	font-size: 30px;
+	position: absolute;	
+	left: -3px;
+	top: -3px;
+	border: 3px solid white;
+	width: 60px;
+	height: 50px;
+	border-radius: 10px 0;	
+	text-align: center;
+	line-height: 45px;	
+	transition: 1s;
+}
+
+.good__price {
+	position: absolute;	
+	top: 0;
+	right: 20px;
+	line-height: 47px;	
+	font-size: 25px;
+}
+
+.good__price::after {
+	content: "PT";
+	margin-left: 10px;
+}
+
+.good__description {
+	padding: 0 15px;	
+	position: absolute;	
+	left: 0;
+	bottom: 0;
+	width: 100%;	
+	height: 30%;
+	font-size: 18px;
+}
+
+.good__title {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 	20px;
+	position: absolute;	
+	left: 10px;
+	bottom: 65px
+}
+
+/* Staff classes */
+.hidden {
+	display: none !important;
+}
+
+.close {
+	font-size: 30px;
+	cursor: pointer;
+	user-select: none;
+	position: absolute;
+	right: 15px;
+	top: 5px;
+	z-index: 1000;
+}
+
+@media screen and (max-width: 1100px) {
+	.filters {display: none;}
+}
